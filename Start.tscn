@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds63g3wot5hjw"]
+
+[ext_resource type="Script" uid="uid://dvd8utiohdof3" path="res://test/chose_menu.gd" id="1_r305v"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r305v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.038000003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 914.0
+offset_top = 147.37599
+offset_right = -118.0
+offset_bottom = -309.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Jouer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jouer"
+
+[node name="Test" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Test"
+
+[node name="Quitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_jouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Test" to="." method="_on_test_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

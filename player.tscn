@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=3 uid="uid://hci0rnkuyo6h"]
+
+[sub_resource type="GDScript" id="GDScript_sh265"]
+script/source = "extends CharacterBody3D
+
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"Sauter\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector(\"Gauche\", \"Droite\", \"Avancer\", \"Reculer\")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == Key.KEY_ESCAPE and event.pressed:
+			print(\"Touche Échap pressée !\")
+			get_tree().quit()
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+resource_name = "caméra"
+script/source = "extends Node3D
+
+# ----- Config -----
+@export var mouse_sensitivity : Vector2 = Vector2(0.15, 0.12) # X = yaw, Y = pitch
+@export var invert_y : bool = false
+@export var smoothing : float = 8.0
+@export var min_pitch_deg : float = -85.0
+@export var max_pitch_deg : float = 85.0
+@export var camera_distance : float = 0.0   # >0 pour reculer la caméra (anticlip activé)
+
+# ----- Références (initialisées dans _ready) -----
+var cam : Camera3D = null
+var ray : RayCast3D = null
+var body : Node3D = null   # parent attendu : CharacterBody3D
+
+# ----- État interne -----
+var target_yaw : float = 0.0
+var target_pitch : float = 0.0
+var smooth_yaw : float = 0.0
+var smooth_pitch : float = 0.0
+
+func _ready() -> void:
+	# adapte les chemins si tes nœuds ont d'autres noms
+	cam = $Camera3D
+	ray = $RayCast3D
+	body = get_parent() as Node3D  # doit être CharacterBody3D idéalement
+
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	if body != null:
+		target_yaw = body.rotation.y
+		smooth_yaw = body.rotation.y
+	target_pitch = rotation.x
+	smooth_pitch = rotation.x
+
+func _unhandled_input(event: InputEvent) -> void:
+	# --- Mouse look (déjà présent) ---
+	if event is InputEventMouseMotion:
+		var dx : float = -event.relative.x * mouse_sensitivity.x
+		var invert_mult : float = -1.0 if invert_y else 1.0
+		var dy : float = -event.relative.y * mouse_sensitivity.y * invert_mult
+
+		target_yaw += deg_to_rad(dx)
+		target_pitch += deg_to_rad(dy)
+		target_pitch = clamp(target_pitch, deg_to_rad(min_pitch_deg), deg_to_rad(max_pitch_deg))
+
+	# --- Touche Échap (action \"ui_cancel\") ---
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	# --- Clic gauche : raycast pour détecter les objets cliquables ---
+	if event is InputEventMouseButton:
+		# 1 = clic gauche dans Godot 4
+		if event.button_index == 1 and event.pressed:
+			if cam == null:
+				return
+
+			var from : Vector3 = cam.project_ray_origin(event.position)
+			var dir : Vector3 = cam.project_ray_normal(event.position)
+			var to : Vector3 = from + dir * 1000.0
+
+			var space_state = get_world_3d().direct_space_state
+			var query = PhysicsRayQueryParameters3D.create(from, to)
+			var result = space_state.intersect_ray(query)
+
+			# si aucun résultat
+			if not result:
+				return
+
+			var collider = result.get(\"collider\")
+			if collider:
+				# si tu utilises le groupe \"clickable\"
+				if collider.is_in_group(\"clickable\"):
+					print(\"Cube cliqué :\", collider.name)
+					if collider.has_method(\"on_clicked\"):
+						collider.on_clicked()
+				# ou, si tu n'utilises pas de groupe, exécute si la méthode existe
+				elif collider.has_method(\"on_clicked\"):
+					collider.on_clicked()
+
+
+func _physics_process(delta: float) -> void:
+	# smoothing (lissage)
+	if smoothing > 0.0:
+		var t : float = clamp(smoothing * delta, 0.0, 1.0)
+		smooth_yaw = lerp_angle(smooth_yaw, target_yaw, t)
+		smooth_pitch = lerp_angle(smooth_pitch, target_pitch, t)
+	else:
+		smooth_yaw = target_yaw
+		smooth_pitch = target_pitch
+
+	# applique yaw au parent (corps)
+	if body != null:
+		body.rotation.y = smooth_yaw
+
+	# applique pitch local au Head
+	rotation.x = smooth_pitch
+
+	# --- Anticlip simple si on veut reculer la caméra ---
+	if camera_distance > 0.001 and ray != null and cam != null:
+		var desired_local : Vector3 = Vector3(0.0, 0.0, -camera_distance)
+		ray.cast_to = desired_local
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			var cp : Vector3 = ray.get_collision_point()
+			# place la caméra juste devant le point de collision
+			var safe_local : Vector3 = to_local(cp) + Vector3(0.0, 0.0, 0.1)
+			cam.transform.origin = safe_local
+		else:
+			cam.transform.origin = desired_local
+			
+
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_onrkg"]
+resource_name = "clicable"
+script/source = "extends Camera3D
+
+@export var max_distance : float = 1000.0
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == 1 and event.pressed:
+			_handle_click(event.position)
+
+func _handle_click(screen_pos : Vector2) -> void:
+	var from = project_ray_origin(screen_pos)
+	var dir = project_ray_normal(screen_pos)
+	var to = from + dir * max_distance
+
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	var result = space_state.intersect_ray(query)
+
+	if not result:
+		return
+
+	var collider = result[\"collider\"]
+	if collider and collider.is_in_group(\"clickable\"):
+		print(\"Clique sur : \", collider.name)
+"
+
+[node name="player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = SubResource("GDScript_sh265")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+transform = Transform3D(0.999997, -0.00208272, 0.00129815, 0.00208419, 0.999997, -0.00113686, -0.00129579, 0.00113954, 0.999999, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_onrkg")
+skeleton = NodePath("../..")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787462, 0)
+script = SubResource("GDScript_4flbx")
+mouse_sensitivity = Vector2(0.18, 0.18)
+smoothing = 100.0
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+script = SubResource("GDScript_onrkg")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Head"]
+spot_range = 17.19
+spot_attenuation = 0.75
+spot_angle = 29.459393
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck6b6144vjakj"]
+
+[ext_resource type="Script" uid="uid://dsuoq66ka5ct2" path="res://Object/porte2.gd" id="1_vg72e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qias8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0nra"]
+
+[sub_resource type="Animation" id="Animation_vg72e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qias8"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h0nra"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0nra"]
+_data = {
+&"RESET": SubResource("Animation_vg72e"),
+&"close": SubResource("Animation_qias8"),
+&"open": SubResource("Animation_h0nra")
+}
+
+[node name="porte" type="Node3D"]
+
+[node name="Hinge" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="porte" type="StaticBody3D" parent="Hinge" groups=["clickable"]]
+transform = Transform3D(-4.371139e-08, 0, -0.5, 0, 3, 0, 1, 0, -2.1855694e-08, 0, 0, 0)
+script = ExtResource("1_vg72e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge/porte"]
+transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
+mesh = SubResource("BoxMesh_qias8")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/porte"]
+transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
+shape = SubResource("BoxShape3D_h0nra")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hinge/porte"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_h0nra")
+}
