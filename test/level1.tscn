@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkwg80iv57t53"]
+[gd_scene load_steps=12 format=3 uid="uid://dkwg80iv57t53"]
 
 [ext_resource type="PackedScene" uid="uid://hci0rnkuyo6h" path="res://player.tscn" id="1_tvpha"]
 [ext_resource type="Script" uid="uid://dxamvgdgngrc8" path="res://Object/cube de dialogue.gd" id="2_h454w"]
 [ext_resource type="PackedScene" uid="uid://ck6b6144vjakj" path="res://Object/porte.tscn" id="3_mygse"]
 [ext_resource type="Script" uid="uid://b2a7xc6o8c8jb" path="res://spolight.gd" id="4_hnwj0"]
+[ext_resource type="PackedScene" uid="uid://duyuvb55j0fvs" path="res://Shader_VHS.tscn" id="5_h454w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lgp48"]
 
@@ -114,3 +115,5 @@ mesh = SubResource("BoxMesh_v8kj3")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.8002994, -2.7510571)
 spot_range = 7.8256
 spot_angle = 50.33641
+
+[node name="ShaderVhs" parent="." instance=ExtResource("5_h454w")]

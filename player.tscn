@@ -210,6 +210,7 @@ smoothing = 100.0
 script = SubResource("GDScript_onrkg")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.9858384, 0.16769795, 0, -0.16769795, 0.9858384, 0, 0, 0)
 spot_range = 17.19
 spot_attenuation = 0.75
 spot_angle = 29.459393

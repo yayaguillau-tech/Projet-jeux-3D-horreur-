@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://duyuvb55j0fvs"]
+
+[ext_resource type="Shader" uid="uid://bgd42qe008523" path="res://shaders/Shader_VHS.gdshader" id="1_e2j18"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3b270"]
+shader = ExtResource("1_e2j18")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[node name="ShaderVhs" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3b270")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2

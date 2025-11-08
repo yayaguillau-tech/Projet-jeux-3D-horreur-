@@ -37,4 +37,3 @@ vous pourrez nous retrouvez sur nos réseau
 
 [Discord](https://discord.gg/KFSsX4p6)
 [Youtube](https://www.youtube.com/@Misteryanis49)
-
