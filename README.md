@@ -13,11 +13,6 @@ comme tout **les jeux en général** vous pouvez mouvoir avec les touches ```Z Q
 malheusement notre jeux comporte certain bug apparue pendant la phase de dévloppment
 * problème de raycast infini.
 
-**Nous pouvons créditer :**
-Yanis pour le code et le dévloppment ainsi que le game disign
-Timéo et Gwendal pour leur contribution a la musique
-Youenne pour l'écriture et le game disgn ainsi que l'intégraliter des models 3D
-
 prochainnement nous pourrons remercier Nathan pour le 
 Game test et la création de texuture
 
@@ -28,3 +23,7 @@ Game test et la création de texuture
 * ajout du montre
 * correction de bugs
 
+# **Nous pouvons créditer :**
+Yanis pour le code et le dévloppment ainsi que le game disign
+Timéo et Gwendal pour leur contribution a la musique
+Youenne pour l'écriture et le game disgn ainsi que l'intégraliter des models 3D
