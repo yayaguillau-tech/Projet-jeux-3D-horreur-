@@ -25,7 +25,7 @@ malheusement notre jeux comporte certain bug apparue pendant la phase de dévlop
 * Timéo la création de l'intégraliter de la musique du jeux
 * Youenne pour l'écriture et le game disgn ainsi que l'intégraliter des models 3D
 
-nous pourrons aussi remercier prochaine :
+**nous pourrons aussi remercier prochaine :**
 
 * Nathan qui nous aideras a la conception des texuture ingame ainsi que le game test
 * Gwendal qui participeras également a la conception des musique ingame
@@ -35,4 +35,5 @@ nous pourrons aussi remercier prochaine :
 vous pourrez nous retrouvez sur nos réseau
 
 [Discord](https://discord.gg/KFSsX4p6)
+[Youtube](https://www.youtube.com/@Misteryanis49)
 
