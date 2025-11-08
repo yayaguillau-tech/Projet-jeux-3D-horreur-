@@ -13,9 +13,6 @@ comme tout **les jeux en général** vous pouvez mouvoir avec les touches ```Z Q
 malheusement notre jeux comporte certain bug apparue pendant la phase de dévloppment
 * problème de raycast infini.
 
-prochainnement nous pourrons remercier Nathan pour le 
-Game test et la création de texuture
-
 # Ajout prochain :
 * ajout de la musique ingame  
 * ajout des niveau principaux  
@@ -24,6 +21,18 @@ Game test et la création de texuture
 * correction de bugs
 
 # **Nous pouvons créditer :**
-Yanis pour le code et le dévloppment ainsi que le game disign
-Timéo et Gwendal pour leur contribution a la musique
-Youenne pour l'écriture et le game disgn ainsi que l'intégraliter des models 3D
+* Yanis pour le code et le dévloppment ainsi que le game disign
+* Timéo la création de l'intégraliter de la musique du jeux
+* Youenne pour l'écriture et le game disgn ainsi que l'intégraliter des models 3D
+
+nous pourrons aussi remercier prochaine :
+
+* Nathan qui nous aideras a la conception des texuture ingame ainsi que le game test
+* Gwendal qui participeras également a la conception des musique ingame
+
+# contact et réseau
+
+vous pourrez nous retrouvez sur nos réseau
+
+[Discord](https://discord.gg/KFSsX4p6)
+
