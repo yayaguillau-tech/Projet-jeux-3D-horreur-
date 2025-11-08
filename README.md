@@ -12,6 +12,7 @@ comme tout **les jeux en général** vous pouvez mouvoir avec les touches ```Z Q
 
 malheusement notre jeux comporte certain bug apparue pendant la phase de dévloppment
 * problème de raycast infini.
+* on avance plus vite sur les diagonales (normalizer ajouter)
 
 # Ajout prochain :
 * ajout de la musique ingame  
