@@ -1,8 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://c22y8nqc4luf3"]
+[gd_scene load_steps=27 format=3 uid="uid://c22y8nqc4luf3"]
 
 [ext_resource type="PackedScene" uid="uid://hci0rnkuyo6h" path="res://player.tscn" id="1_shfsq"]
+[ext_resource type="Texture2D" uid="uid://kxgbhtltnkfm" path="res://assets/texture/brique2.jpg" id="2_57a1n"]
 [ext_resource type="PackedScene" uid="uid://duyuvb55j0fvs" path="res://Shader_VHS.tscn" id="2_l5urv"]
 [ext_resource type="Script" uid="uid://dc0vyu6hmugeu" path="res://Niveau 1/script/lightButtons.gd" id="3_13qyn"]
+[ext_resource type="PackedScene" uid="uid://ck6b6144vjakj" path="res://Object/porte.tscn" id="4_13qyn"]
+[ext_resource type="Script" uid="uid://bkmv1g5uul6a7" path="res://Niveau 1/script/MurInvisibleTips.gd" id="5_10lhw"]
+[ext_resource type="PackedScene" uid="uid://3jxgkh51rucd" path="res://assets/3D/old_tv.glb" id="7_13hsg"]
+[ext_resource type="PackedScene" uid="uid://c510pp8ptg4nj" path="res://assets/3D/canape.glb" id="8_13hsg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_roo5a"]
 
@@ -11,7 +16,9 @@
 [sub_resource type="Skin" id="Skin_shfsq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roo5a"]
-albedo_color = Color(0.22745098, 0.09411765, 0, 1)
+albedo_texture = ExtResource("2_57a1n")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_10lhw"]
 
@@ -21,21 +28,6 @@ albedo_color = Color(0.22745098, 0.09411765, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13hsg"]
 albedo_color = Color(0.35656494, 0.3565649, 0.3565649, 1)
-
-[sub_resource type="Animation" id="Animation_hedge"]
-resource_name = "lightOFF"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.01),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.22771312, 0, 0), Vector3(-0.2268928, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_yl2ov"]
 length = 0.001
@@ -52,6 +44,21 @@ tracks/0/keys = {
 "values": [Vector3(0.22771312, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hedge"]
+resource_name = "lightOFF"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.22771312, 0, 0), Vector3(-0.2268928, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qjt35"]
 _data = {
 &"RESET": SubResource("Animation_yl2ov"),
@@ -62,15 +69,30 @@ _data = {
 
 [sub_resource type="BoxMesh" id="BoxMesh_13qyn"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_10lhw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yl2ov"]
+size = Vector3(1.8280029, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2m6q"]
+size = Vector3(1, 1.5657043, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13hsg"]
+size = Vector3(22.658035, 14.013306, 17.01355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hedge"]
+size = Vector3(1338.6636, 611.0911, 312.73828)
+
 [node name="Level1" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_shfsq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1014618, 0)
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -1.5737617, 1.1014618, -1.0540482)
 
 [node name="solle" type="StaticBody3D" parent="."]
 transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="solle"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 2.533698, 0)
 shape = SubResource("BoxShape3D_roo5a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="solle/CollisionShape3D"]
@@ -80,6 +102,8 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_roo5a")
 
 [node name="ShaderVhs" parent="." instance=ExtResource("2_l5urv")]
+offset_top = 1.0
+offset_bottom = 1.0
 
 [node name="buttons" type="StaticBody3D" parent="." groups=["clickable"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.4785354, -5.6645236)
@@ -104,6 +128,7 @@ libraries = {
 }
 
 [node name="light" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.876225, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="light"]
 transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 3.181437, 1.1375806)
@@ -112,7 +137,7 @@ spot_attenuation = 0.0
 spot_angle = 50.41
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="light"]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 5.900058, 3.181437, 1.1375806)
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, -5, 3.181437, 1.1375806)
 spot_range = 4.91
 spot_attenuation = 0.0
 spot_angle = 50.41
@@ -125,18 +150,125 @@ spot_attenuation = 0.0
 spot_angle = 50.41
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="light"]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 5.900058, 3.181437, -3.6895638)
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, -5, 3.181437, -3.6895638)
 spot_range = 4.91
 spot_attenuation = 0.0
 spot_angle = 50.41
 metadata/_edit_lock_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Mur" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8347902, -5.746832)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(8, 0, 0, 0, 2.5, 0, 0, 0, 0.3, 0, 0.57165647, -0.12171602)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mur"]
+transform = Transform3D(10.567396, 0, 0, 0, 2.5, 0, 0, 0, 0.3, -2.2178466, 0.57165647, -0.12171602)
 shape = SubResource("BoxShape3D_l5urv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mur/CollisionShape3D"]
 mesh = SubResource("BoxMesh_13qyn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Mur"]
+transform = Transform3D(-1.8585658e-07, 0, 0.3, 0, 2.5, 0, -4.251903, 0, -1.3113417e-08, 3.002288, 0.57165647, 1.4321613)
+shape = SubResource("BoxShape3D_l5urv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mur/CollisionShape3D2"]
+mesh = SubResource("BoxMesh_13qyn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Mur"]
+transform = Transform3D(-1.8585658e-07, 0, 0.3, 0, 2.5, 0, -4.251903, 0, -1.3113417e-08, 3.002288, 0.57165647, 7.6625977)
+shape = SubResource("BoxShape3D_l5urv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mur/CollisionShape3D3"]
+mesh = SubResource("BoxMesh_13qyn")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Mur"]
+transform = Transform3D(10.567396, 0, 0, 0, 2.5, 0, 0, 0, 0.3, -2.2178466, 0.57165647, 8.618593)
+shape = SubResource("BoxShape3D_l5urv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mur/CollisionShape3D4"]
+mesh = SubResource("BoxMesh_13qyn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Mur"]
+transform = Transform3D(-4.6191556e-07, 0, 0.3, 0, 2.5, 0, -10.567396, 0, -1.3113417e-08, -4.8057747, 0.57165647, 4.6314883)
+shape = SubResource("BoxShape3D_l5urv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mur/CollisionShape3D5"]
+mesh = SubResource("BoxMesh_13qyn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Objectif" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Objectif"]
+layout_mode = 0
+offset_left = 794.0
+offset_top = -3.0
+offset_right = 1236.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 24
+text = "Obejctif :
+éteindre la lumière"
+horizontal_alignment = 1
+
+[node name="Tips" type="Label" parent="CanvasLayer/Objectif"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 528.0
+offset_right = 666.0
+offset_bottom = 562.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="porte" parent="." instance=ExtResource("4_13qyn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.91819, 1.1174386, -0.050555468)
+
+[node name="plafond" type="StaticBody3D" parent="."]
+transform = Transform3D(4.7385955, 0, 0, 0, 0.43741006, 0, 0, 0, 10.122314, 0, 3.1925633, -1.1545343)
+
+[node name="plafond" type="MeshInstance3D" parent="plafond"]
+transform = Transform3D(2.7821126, 0, 0, 0, 1, 0, 0, 0, 1, -0.48930472, -1.2109032, 0)
+mesh = SubResource("BoxMesh_10lhw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plafond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22796634, -1.1047096, 0)
+shape = SubResource("BoxShape3D_yl2ov")
+
+[node name="mur invisible" type="StaticBody3D" parent="." groups=["clickable"]]
+script = ExtResource("5_10lhw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mur invisible"]
+transform = Transform3D(0.6424025, 0, 0, 0, 1.3801012, 0, 0, 0, 1.9317619, 2.8957086, 1.3795962, -1.2806964)
+shape = SubResource("BoxShape3D_m2m6q")
+
+[node name="Meuble" type="Node3D" parent="."]
+transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, -3.832212, 1.329042, -1.1380008)
+
+[node name="Télé" type="StaticBody3D" parent="Meuble"]
+
+[node name="Sketchfab_Scene" parent="Meuble/Télé" instance=ExtResource("7_13hsg")]
+transform = Transform3D(10, 0, 8.526513e-14, 0, 10, 0, -8.526513e-14, 0, 10, 9.716385, -13.088645, 4.0745926)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meuble/Télé"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.178326, -11.967163, 3.7722778)
+shape = SubResource("BoxShape3D_13hsg")
+
+[node name="canapé" type="StaticBody3D" parent="Meuble"]
+transform = Transform3D(-0.025000002, 0, -2.1855695e-09, 0, 0.025000002, 0, 2.1855695e-09, 0, -0.025000002, 6.8420944, -20.935698, 69.087524)
+
+[node name="Sketchfab_Scene" parent="Meuble/canapé" instance=ExtResource("8_13hsg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meuble/canapé"]
+transform = Transform3D(-1.4245344, 0, -6.735945e-12, 0, 1.3610737, 0, -4.192202e-12, 0, 2.6255498, 6.9353027, 422.4589, 155.86838)
+shape = SubResource("BoxShape3D_hedge")

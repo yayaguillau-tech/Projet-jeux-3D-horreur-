@@ -117,7 +117,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			if collider:
 				# si tu utilises le groupe \"clickable\"
 				if collider.is_in_group(\"clickable\"):
-					print(\"Cube cliqué :\", collider.name)
 					if collider.has_method(\"on_clicked\"):
 						collider.on_clicked()
 				# ou, si tu n'utilises pas de groupe, exécute si la méthode existe

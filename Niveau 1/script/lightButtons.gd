@@ -5,3 +5,6 @@ func on_clicked():
 	$AnimationPlayer.play("lightOFF")
 	
 	$"../light".visible = false
+	$"../CanvasLayer/Objectif/Label".text = "Objectif : \n aller au lit"
+	
+	$"../mur invisible".collision_layer = false

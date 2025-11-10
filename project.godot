@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Premier jeux3D"
-run/main_scene="uid://dkwg80iv57t53"
+run/main_scene="uid://ds63g3wot5hjw"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

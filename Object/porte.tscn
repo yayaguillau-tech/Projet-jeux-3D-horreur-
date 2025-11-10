@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck6b6144vjakj"]
+[gd_scene load_steps=10 format=3 uid="uid://ck6b6144vjakj"]
 
 [ext_resource type="Script" uid="uid://dsuoq66ka5ct2" path="res://Object/porte2.gd" id="1_vg72e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qias8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybg6e"]
+albedo_color = Color(0.23413977, 0.17629668, 0.060582474, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v58h8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h0nra"]
 
@@ -19,6 +24,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hinge/porte/MeshInstance3D/MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qias8"]
@@ -50,6 +67,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hinge/porte/MeshInstance3D/MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0.25218257, -1.5707964, -5.6315144e-09), Vector3(0, -1.5707964, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h0nra"]
 _data = {
@@ -68,12 +97,18 @@ transform = Transform3D(-4.371139e-08, 0, -0.5, 0, 3, 0, 1, 0, -2.1855694e-08, 0
 script = ExtResource("1_vg72e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge/porte"]
-transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
 mesh = SubResource("BoxMesh_qias8")
 skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_ybg6e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hinge/porte/MeshInstance3D"]
+transform = Transform3D(-8.742278e-08, 0, -0.24999999, 0, 0.05000001, 0, 2, 0, -1.0927846e-08, 0.28473693, 0.021665197, 0.067442834)
+mesh = SubResource("BoxMesh_v58h8")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/porte"]
-transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.561538, 0, -0.5615381)
 shape = SubResource("BoxShape3D_h0nra")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hinge/porte"]
