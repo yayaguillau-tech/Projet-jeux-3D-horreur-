@@ -210,7 +210,7 @@ offset_right = 1236.0
 offset_bottom = 134.0
 theme_override_font_sizes/font_size = 24
 text = "Obejctif :
-éteindre la lumière"
+Sortir de la maison"
 horizontal_alignment = 1
 
 [node name="Tips" type="Label" parent="CanvasLayer/Objectif"]

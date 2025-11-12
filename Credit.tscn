@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://rx8shy8wg7iv"]
+
+[ext_resource type="Script" uid="uid://bgtfltl6xp2hs" path="res://credit.gd" id="1_ugrpf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugrpf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 32
+text = "Credit :
+Yanis Guillau : dévloppeur principale
+Youenn Bonavet : Modélisateur 3D
+Timéo Homo : créateur de musique 
+
+ChatGPT : le goat qui a carrer le code par ce que flemme de lire la doc"
+
+[node name="Menu_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 584.0
+offset_right = 1145.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 32
+text = "Menu"
+
+[connection signal="pressed" from="Menu_button" to="." method="_on_menu_button_pressed"]
