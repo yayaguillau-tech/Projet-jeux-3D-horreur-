@@ -78,6 +78,8 @@ func _ready() -> void:
 		smooth_yaw = body.rotation.y
 	target_pitch = rotation.x
 	smooth_pitch = rotation.x
+	
+	var cam_player = $Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	# --- Mouse look (déjà présent) ---
@@ -162,14 +164,13 @@ func _physics_process(delta: float) -> void:
 resource_name = "clicable"
 script/source = "extends Camera3D
 
-@export var max_distance : float = 1000.0
+@export var max_distance: float = 1000.0
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed:
-			_handle_click(event.position)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_handle_click(event.position)
 
-func _handle_click(screen_pos : Vector2) -> void:
+func _handle_click(screen_pos: Vector2) -> void:
 	var from = project_ray_origin(screen_pos)
 	var dir = project_ray_normal(screen_pos)
 	var to = from + dir * max_distance
@@ -181,9 +182,18 @@ func _handle_click(screen_pos : Vector2) -> void:
 	if not result:
 		return
 
-	var collider = result[\"collider\"]
+	var collider = result.get(\"collider\")
 	if collider and collider.is_in_group(\"clickable\"):
 		print(\"Clique sur : \", collider.name)
+
+# fonctions publiques pour activer / désactiver cette caméra
+func camera_on() -> void:
+	current = true
+	# si tu veux empêcher this camera de traiter l'input quand elle est désactivée,
+	# tu peux aussi gérer des flags de contrôle de joueur ici
+
+func camera_off() -> void:
+	current = false
 "
 
 [node name="player" type="Node3D"]

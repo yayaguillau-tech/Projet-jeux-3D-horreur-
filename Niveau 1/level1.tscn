@@ -86,7 +86,7 @@ size = Vector3(1338.6636, 611.0911, 312.73828)
 [node name="Level1" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_shfsq")]
-transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -1.5737617, 1.1014618, -1.0540482)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.5737617, 1.1014618, -1.0540482)
 
 [node name="solle" type="StaticBody3D" parent="."]
 transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0)
