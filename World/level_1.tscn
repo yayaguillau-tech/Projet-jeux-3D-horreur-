@@ -1,0 +1,337 @@
+[gd_scene load_steps=18 format=3 uid="uid://jok5nfm82jti"]
+
+[ext_resource type="PackedScene" uid="uid://hci0rnkuyo6h" path="res://player.tscn" id="1_4v8e6"]
+[ext_resource type="Texture2D" uid="uid://wwecpdlekl1j" path="res://assets/texture/grass.jpg" id="2_upnyp"]
+[ext_resource type="Script" uid="uid://oqdac7synqu7" path="res://World/script/portal1.gd" id="3_upnyp"]
+[ext_resource type="Script" uid="uid://ojhm66g1nr2b" path="res://test/portal.gd" id="4_nwxvu"]
+[ext_resource type="PackedScene" uid="uid://cmqqw327rieh0" path="res://assets/3D/tree.tscn" id="5_oub0o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlkwc"]
+size = Vector3(1, 0.001, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuuja"]
+albedo_color = Color(0.585062, 0.585062, 0.5850621, 1)
+albedo_texture = ExtResource("2_upnyp")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nqu3w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4v8e6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_upnyp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v8e6"]
+albedo_color = Color(0.25323758, 0.25323758, 0.25323758, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4ta6"]
+size = Vector3(1, 1, 0.76660156)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwxvu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oub0o"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.6901961)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oub0o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5ydv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5ydv"]
+
+[node name="level1" type="Node3D"]
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_4v8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0176387, 0.35357094, 10.378656)
+
+[node name="world" type="StaticBody3D" parent="."]
+
+[node name="solle" type="CollisionShape3D" parent="world"]
+transform = Transform3D(45, 0, 0, 0, 0.10768049, 0, 0, 0, 45, 0, -1.0663414, 0)
+shape = SubResource("BoxShape3D_qlkwc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/solle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3558044, 0)
+material_override = SubResource("StandardMaterial3D_nuuja")
+mesh = SubResource("BoxMesh_nqu3w")
+skeleton = NodePath("../..")
+
+[node name="portaille" type="StaticBody3D" parent="world"]
+
+[node name="Cube" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33300102, 0)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube2" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(1.079998, 0, -1.7643964, 0, 1.8907348, 0, 1.4192411, 0, 1.3426504, 0.51520646, -0.23467958, -1.7607598)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube2"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube3" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(0.7047333, 0, 1.6993299, 0, 1, 0, -0.7094723, 0, 1.687979, 2.2681894, -0.33300102, -1.5936528)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube3"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube4" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(1, 0, 0, 0, 1.247431, 0, 0, 0, 1.7200301, 3.0396461, -0.33300102, 0.08686793)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube4"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube5" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(0.73954886, 0, -1.1577573, 0, 0.7748567, 0, 0.6731029, 0, 1.2720463, 2.3709755, -0.4906124, 1.2595724)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube5"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube6" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(0.82413024, 0, 0.4661967, 0, 0.58903503, 0, -0.3136998, 0, 1.2247595, 0.27419806, -0.4386498, 0.82788074)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube6"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Cube7" type="CollisionShape3D" parent="world/portaille"]
+transform = Transform3D(2.1018276, 0, 0, 0, 0.78641135, 0, 0, 0, 1, 1.2969803, -0.33300102, 1.5480944)
+shape = SubResource("BoxShape3D_4v8e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Cube7"]
+mesh = SubResource("BoxMesh_upnyp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4v8e6")
+
+[node name="Portal" type="Area3D" parent="world/portaille"]
+priority = 1
+script = ExtResource("3_upnyp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/portaille/Portal"]
+transform = Transform3D(2.6282985, 0, 0, 0, 1, 0, 0, 0, 2.8559153, 1.4054968, -0.7241138, -0.40753585)
+shape = SubResource("BoxShape3D_p4ta6")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Portal/CollisionShape3D"]
+mesh = SubResource("BoxMesh_nwxvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_oub0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Portal/CollisionShape3D/MeshInstance3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13301086, 0)
+mesh = SubResource("BoxMesh_nwxvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_oub0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Portal/CollisionShape3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13301086, 0)
+mesh = SubResource("BoxMesh_nwxvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_oub0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/portaille/Portal/CollisionShape3D/MeshInstance3D/MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13301086, 0)
+mesh = SubResource("BoxMesh_nwxvu")
+surface_material_override/0 = SubResource("StandardMaterial3D_oub0o")
+
+[node name="Area3D" type="Area3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6180778, 0.23426199, -0.018497467)
+script = ExtResource("4_nwxvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4138887, 0)
+shape = SubResource("BoxShape3D_oub0o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/Area3D/CollisionShape3D"]
+visible = false
+mesh = SubResource("BoxMesh_n5ydv")
+
+[node name="arbre" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42923546, 0)
+
+[node name="tree" type="StaticBody3D" parent="world/arbre"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="blockbench_export2" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.795469, -0.92367077, -3.5079193)
+
+[node name="blockbench_export3" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9.874542, -0.68072224, -11.759344)
+
+[node name="blockbench_export4" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -4.3187475, -0.68072224, -10.192682)
+
+[node name="blockbench_export5" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -7.1018353, -0.68072224, 8.410204)
+
+[node name="blockbench_export6" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.890868, -0.68072224, 8.410204)
+
+[node name="blockbench_export7" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.914144, -0.68072224, -2.6344814)
+
+[node name="blockbench_export8" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.297896, -0.68072224, 11.668501)
+
+[node name="blockbench_export9" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 24.082317, -0.68072224, 1.2633162)
+
+[node name="blockbench_export11" parent="world/arbre/tree" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.695259, -0.68072224, -16.86955)
+
+[node name="tree2" type="StaticBody3D" parent="world/arbre"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.386216, 0, 11.67889)
+
+[node name="blockbench_export2" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.795469, -0.92367077, -3.5079193)
+
+[node name="blockbench_export3" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9.874542, -0.68072224, -11.759344)
+
+[node name="blockbench_export4" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -4.3187475, -0.68072224, -10.192682)
+
+[node name="blockbench_export5" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -7.1018353, -0.68072224, 8.410204)
+
+[node name="blockbench_export6" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.890868, -0.68072224, 8.410204)
+
+[node name="blockbench_export7" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.914144, -0.68072224, -2.6344814)
+
+[node name="blockbench_export8" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.297896, -0.68072224, 11.668501)
+
+[node name="blockbench_export9" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.38360405, -0.68072224, 0.13656044)
+
+[node name="blockbench_export10" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.795469, -0.92367077, -18.323801)
+
+[node name="blockbench_export11" parent="world/arbre/tree2" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 59.855286, -0.68072224, -11.759344)
+
+[node name="tree5" type="StaticBody3D" parent="world/arbre"]
+transform = Transform3D(-0.49941325, 0, -0.024215715, 0, 0.5, 0, 0.024215715, 0, -0.49941325, 6.390216, 0, -14.779812)
+
+[node name="blockbench_export2" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.795469, -0.92367077, -3.5079193)
+
+[node name="blockbench_export3" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9.874542, -0.68072224, -11.759344)
+
+[node name="blockbench_export5" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -7.1018353, -0.68072224, 8.410204)
+
+[node name="blockbench_export6" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.890868, -0.68072224, 8.410204)
+
+[node name="blockbench_export7" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.914144, -0.68072224, -2.6344814)
+
+[node name="blockbench_export8" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.297896, -0.68072224, 11.668501)
+
+[node name="blockbench_export9" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.38360405, -0.68072224, 0.13656044)
+
+[node name="blockbench_export10" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.326979, -0.68072224, 5.7014027)
+
+[node name="blockbench_export11" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -22.318893, -0.68072224, 8.410204)
+
+[node name="blockbench_export4" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -25.632397, -0.92367077, -11.699341)
+
+[node name="blockbench_export12" parent="world/arbre/tree5" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 24.682362, -0.68072224, -11.041336)
+
+[node name="tree3" type="StaticBody3D" parent="world/arbre"]
+transform = Transform3D(0.44374695, 0, -0.23040974, 0, 0.5, 0, 0.23040974, 0, 0.44374695, -18.553272, 0, -10.379931)
+
+[node name="blockbench_export3" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9.874542, -0.68072224, -11.759344)
+
+[node name="blockbench_export4" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -4.3187475, -0.68072224, -10.192682)
+
+[node name="blockbench_export6" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.890868, -0.68072224, 8.410204)
+
+[node name="blockbench_export7" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.914144, -0.68072224, -2.6344814)
+
+[node name="blockbench_export8" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.297896, -0.68072224, 11.668501)
+
+[node name="blockbench_export9" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.38360405, -0.68072224, 0.13656044)
+
+[node name="blockbench_export5" parent="world/arbre/tree3" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 14.648783, -0.68072224, -26.8462)
+
+[node name="tree4" type="StaticBody3D" parent="world/arbre"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.938006, 0, 11.67889)
+
+[node name="blockbench_export2" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.795469, -0.92367077, -3.5079193)
+
+[node name="blockbench_export3" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9.874544, -0.68072224, -26.745848)
+
+[node name="blockbench_export5" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -7.1018353, -0.68072224, 8.410204)
+
+[node name="blockbench_export6" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.890868, -0.68072224, 8.410204)
+
+[node name="blockbench_export7" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.914144, -0.68072224, -2.6344814)
+
+[node name="blockbench_export8" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 15.297896, -0.68072224, 11.668501)
+
+[node name="blockbench_export9" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.38360405, -0.68072224, 0.13656044)
+
+[node name="blockbench_export10" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.326979, -0.68072224, 5.7014027)
+
+[node name="blockbench_export11" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -22.318893, -0.68072224, 8.410204)
+
+[node name="blockbench_export4" parent="world/arbre/tree4" instance=ExtResource("5_oub0o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 5.3411427, -0.92367077, -35.08768)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 43.907337, -22.42075, 0, 0)
+shape = SubResource("BoxShape3D_n5ydv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="world/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 43.907337, 21.757425, 0, 0)
+shape = SubResource("BoxShape3D_n5ydv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="world/StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 43.907337, 0, 1, 0, -1, 0, -1.9192507e-06, 2.3811998, 0, 22.05534)
+shape = SubResource("BoxShape3D_n5ydv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="world/StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 43.907337, 0, 1, 0, -1, 0, -1.9192507e-06, 2.3811998, 0, -22.476917)
+shape = SubResource("BoxShape3D_n5ydv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 8.811, 12)
+
+[connection signal="body_entered" from="world/portaille/Portal" to="world/portaille/Portal" method="_on_body_entered"]
+[connection signal="body_entered" from="world/Area3D" to="world/Area3D" method="_on_body_entered"]

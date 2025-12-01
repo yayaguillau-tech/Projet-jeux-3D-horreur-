@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://hci0rnkuyo6h" path="res://player.tscn" id="1_shfsq"]
 [ext_resource type="Texture2D" uid="uid://kxgbhtltnkfm" path="res://assets/texture/brique2.jpg" id="2_57a1n"]
 [ext_resource type="PackedScene" uid="uid://duyuvb55j0fvs" path="res://Shader_VHS.tscn" id="2_l5urv"]
-[ext_resource type="Script" uid="uid://dc0vyu6hmugeu" path="res://Niveau 1/script/lightButtons.gd" id="3_13qyn"]
+[ext_resource type="Script" uid="uid://dc0vyu6hmugeu" path="res://worldunactive/script/lightButtons.gd" id="3_13qyn"]
 [ext_resource type="PackedScene" uid="uid://ck6b6144vjakj" path="res://Object/porte.tscn" id="4_13qyn"]
-[ext_resource type="Script" uid="uid://bkmv1g5uul6a7" path="res://Niveau 1/script/MurInvisibleTips.gd" id="5_10lhw"]
+[ext_resource type="Script" uid="uid://bkmv1g5uul6a7" path="res://worldunactive/script/MurInvisibleTips.gd" id="5_10lhw"]
 [ext_resource type="PackedScene" uid="uid://3jxgkh51rucd" path="res://assets/3D/old_tv.glb" id="7_13hsg"]
 [ext_resource type="PackedScene" uid="uid://c510pp8ptg4nj" path="res://assets/3D/canape.glb" id="8_13hsg"]
 

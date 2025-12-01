@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmqqw327rieh0"]
+
+[ext_resource type="PackedScene" uid="uid://bmv1woy22ncgy" path="res://assets/3D/tree.gltf" id="1_lukmo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwu2g"]
+size = Vector3(1.2563477, 0.5004883, 0.12585449)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lukmo"]
+height = 0.8758545
+radius = 0.3461914
+
+[node name="blockbench_export" instance=ExtResource("1_lukmo")]
+transform = Transform3D(0.9636165, 0, -0.26728883, 0, 1, 0, 0.26728883, 0, 0.9636165, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010986328, 0.24975586, -6.1035156e-05)
+shape = SubResource("BoxShape3D_bwu2g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8102417, 0)
+shape = SubResource("CylinderShape3D_lukmo")
