@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://jok5nfm82jti"]
+[gd_scene load_steps=24 format=3 uid="uid://jok5nfm82jti"]
 
 [ext_resource type="PackedScene" uid="uid://hci0rnkuyo6h" path="res://player.tscn" id="1_4v8e6"]
 [ext_resource type="Texture2D" uid="uid://wwecpdlekl1j" path="res://assets/texture/grass.jpg" id="2_upnyp"]
@@ -37,6 +37,24 @@ albedo_color = Color(0, 0, 0, 0.6901961)
 [sub_resource type="BoxMesh" id="BoxMesh_n5ydv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5ydv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2bmm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gijfi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiljp"]
+albedo_color = Color(0.33163944, 0.33163944, 0.3316394, 1)
+
+[sub_resource type="Environment" id="Environment_oub0o"]
+background_mode = 1
+background_color = Color(0, 0.7764706, 1, 1)
+ambient_light_source = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_oub0o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5ydv"]
+transparency = 1
+albedo_color = Color(0.5647059, 0.5647059, 0.5647059, 0.5686275)
 
 [node name="level1" type="Node3D"]
 
@@ -330,8 +348,1504 @@ shape = SubResource("BoxShape3D_n5ydv")
 transform = Transform3D(-4.371139e-08, 0, 43.907337, 0, 1, 0, -1, 0, -1.9192507e-06, 2.3811998, 0, -22.476917)
 shape = SubResource("BoxShape3D_n5ydv")
 
+[node name="mur" type="StaticBody3D" parent="world"]
+
+[node name="mur étage 1" type="StaticBody3D" parent="world/mur"]
+
+[node name="Wall" type="StaticBody3D" parent="world/mur/mur étage 1"]
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre7" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, 20.95183, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre7"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre13" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall"]
+transform = Transform3D(3.5647511, 0, -2.2209342, 0, 4.2000003, 0, 2.2209342, 0, 3.5647511, -20.88068, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall/pierre13"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall2" type="StaticBody3D" parent="world/mur/mur étage 1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre7" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, 20.95183, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre7"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre13" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall2"]
+transform = Transform3D(3.5647511, 0, -2.2209342, 0, 4.2000003, 0, 2.2209342, 0, 3.5647511, -20.88068, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall2/pierre13"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall3" type="StaticBody3D" parent="world/mur/mur étage 1"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre7" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, 20.95183, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre7"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre13" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall3"]
+transform = Transform3D(3.5647511, 0, -2.2209342, 0, 4.2000003, 0, 2.2209342, 0, 3.5647511, -20.88068, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall3/pierre13"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall4" type="StaticBody3D" parent="world/mur/mur étage 1"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre7" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, 20.95183, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre7"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre13" type="CollisionShape3D" parent="world/mur/mur étage 1/Wall4"]
+transform = Transform3D(3.5647511, 0, -2.2209342, 0, 4.2000003, 0, 2.2209342, 0, 3.5647511, -20.88068, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 1/Wall4/pierre13"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="mur étage 2" type="StaticBody3D" parent="world/mur"]
+
+[node name="Wall" type="StaticBody3D" parent="world/mur/mur étage 2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.7805376, -7.5382004)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall2" type="StaticBody3D" parent="world/mur/mur étage 2"]
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 3.3212075, 1.1753559, 7.2585154)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall2"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall2/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall3" type="StaticBody3D" parent="world/mur/mur étage 2"]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -8.37732, 1.2927399, 0)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre13" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall3"]
+transform = Transform3D(3.5647511, 0, -2.2209342, 0, 4.2000003, 0, 2.2209342, 0, 3.5647511, -20.88068, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall3/pierre13"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="Wall4" type="StaticBody3D" parent="world/mur/mur étage 2"]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 7.8352413, 2.1192265, 0)
+
+[node name="pierre" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(2.879056, 0, 2.7768753, 0, 4, 0, -2.7768753, 0, 2.879056, 0.9777274, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre2" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(4.0281634, 0, 1.5046265, 0, 4.3, 0, -1.5046265, 0, 4.0281634, 4.6249638, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre2"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre3" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.0835547, 0, -2.2207408, 0, 3.8, 0, 2.2207408, 0, 3.0835547, 7.8385344, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre3"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre4" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.5619109, 0, -0.5222933, 0, 3.6, 0, 0.5222933, 0, 3.5619109, 10.77447, 0.5463176, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre4"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre5" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.3766837, 0, 1.2482023, 0, 3.6, 0, -1.2482023, 0, 3.3766837, 14.571762, 0.15139532, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre5"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre6" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.548913, 0, -0.6043322, 0, 3.5999997, 0, 0.6043322, 0, 3.548913, 17.37288, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre6"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre8" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(4.33756, 0, -0.73862815, 0, 4.4, 0, 0.73862815, 0, 4.33756, -2.3885078, 0.6619048, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre8"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre9" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.7460747, 0, -0.63790613, 0, 3.8, 0, 0.63790613, 0, 3.7460747, -5.882686, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre9"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre10" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(2.6167092, 0, -2.7555094, 0, 3.8, 0, 2.7555094, 0, 2.6167092, -9.608183, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre10"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre11" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.5307531, 0, -1.4049146, 0, 3.8, 0, 1.4049146, 0, 3.5307531, -13.280548, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre11"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="pierre12" type="CollisionShape3D" parent="world/mur/mur étage 2/Wall4"]
+transform = Transform3D(3.7046547, 0, 0.8458936, 0, 3.8, 0, -0.8458936, 0, 3.7046547, -16.664946, 0.3843465, 22.636427)
+shape = SubResource("BoxShape3D_u2bmm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/mur/mur étage 2/Wall4/pierre12"]
+mesh = SubResource("BoxMesh_gijfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_iiljp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource("Environment_oub0o")
+
+[node name="nuage2" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.630278, 9.431782)
+
+[node name="nuage" type="StaticBody3D" parent="world/nuage2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5633745, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage3" type="StaticBody3D" parent="world/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5633745, 0, -10.869568)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3706026, 0, 3.932013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.934938, 0, -5.918502)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7113209, 0, 8.770561)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.436963, 0, 4.7619786)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8343725, -9.536743e-07, -6.337967)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.184479, -9.536743e-07, 9.996988)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4866023, -9.536743e-07, 1.2871723)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage3" type="StaticBody3D" parent="world/nuage2/nuage3"]
+transform = Transform3D(0.93070513, 0, 0.36577037, 0, 1, 0, -0.36577037, 0, 0.93070513, -15.480219, 0, -6.8077965)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3706026, 0, 3.932013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.934938, 0, -5.918502)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7113209, 0, 8.770561)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.436963, 0, 4.7619786)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8343725, -9.536743e-07, -6.337967)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.184479, -9.536743e-07, 9.996988)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="nuage2" type="StaticBody3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4866023, -9.536743e-07, 1.2871723)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, 0)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.3368405, 0.39232826, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -2.1318269)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, -0.94551706, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1.299449, 0, 0, 0, 2.751499, 0.6086987, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/nuage2/nuage3/nuage3/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2/nuage2"]
+transform = Transform3D(1.6085098, 0, 0, 0, 1, 0, 0, 0, 1.8915983, 0, 0, -0.8976188)
+mesh = SubResource("SphereMesh_oub0o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ydv")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 8.811, 12)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 15.129113, 15.877388)
 
 [connection signal="body_entered" from="world/portaille/Portal" to="world/portaille/Portal" method="_on_body_entered"]
 [connection signal="body_entered" from="world/Area3D" to="world/Area3D" method="_on_body_entered"]
